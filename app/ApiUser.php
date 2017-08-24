@@ -13,7 +13,6 @@ class ApiUser extends Model
      */
     protected $table = 'api_user';
 
-    use Notifiable;
 
     /**
      * The attributes that are mass assignable.

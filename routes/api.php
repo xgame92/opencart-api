@@ -19,11 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'v1'], function (){
 
-    Route::post('user',[
-        'uses' => 'AuthController@store'
-    ]);
+    //FOR AUTHENTICATION
+    Route::resource('user','V1\AuthController');
 
-    Route::post('user/signin',[
-        'uses' => 'AuthController@signin'
-    ]);
+
 });
