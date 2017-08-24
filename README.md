@@ -16,6 +16,12 @@ The plugins that I used in this projects.
 | ------ | ------ |
 | Content-Type | application/json |
 | X-Requested-With | XMLHttpRequest |
+| Authorization| Bearer: [YOUR_SECRET_TOKEN] |
+
+For Authorization token, you can use :
+```
+www.domain.com/api/v1/products?token=[YOUR_SECRET_TOKEN]
+```
 
 
 Creating Restful Controller
