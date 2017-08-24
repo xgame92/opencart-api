@@ -12,7 +12,7 @@ The plugins that I used in this projects.
 
 ### POSTMAN Configurations
 
-| Plugin | README |
+| Key | Value |
 | ------ | ------ |
 | Content-Type | application/json |
 | X-Requested-With | XMLHttpRequest |
