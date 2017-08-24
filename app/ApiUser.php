@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 
-class ApiUser extends Model
+use Illuminate\Foundation\Auth\User as Authenticatable;
+class ApiUser extends Authenticatable
 {
     /**
      * The table associated with the model.
