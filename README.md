@@ -10,7 +10,16 @@ The plugins that I used in this projects.
 | laravel-cors | [Adds CORS (Cross-Origin Resource Sharing) headers support in your Laravel application](https://github.com/barryvdh/laravel-cors) |
 
 
+### POSTMAN Configurations
+
+| Plugin | README |
+| ------ | ------ |
+| Content-Type | application/json |
+| X-Requested-With | XMLHttpRequest |
+
+
 Creating Restful Controller
+
 ```
 php artisan make:controller PostController --resource
 ```
