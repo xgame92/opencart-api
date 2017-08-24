@@ -179,8 +179,15 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        //CORS Middleware for Laravel 5
+        /*
+         * CORS Middleware for Laravel 5
+         */
         Barryvdh\Cors\ServiceProvider::class,
+
+        /*
+         *JSON Web Token Authentication for Laravel & Lumen
+         */
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
     ],
 
     /*
@@ -230,6 +237,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        /*
+         *JSON Web Token Authentication for Laravel & Lumen
+         */
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class
     ],
 
 ];
