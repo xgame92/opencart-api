@@ -58,5 +58,9 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        /*
+         * JWT Auth middle ware
+         */
+        'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
     ];
 }
