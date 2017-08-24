@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * Created by Reliese Model.
+ * Date: Wed, 23 Aug 2017 20:25:30 +0000.
+ */
+
+namespace App\Models;
+
+use Reliese\Database\Eloquent\Model as Eloquent;
+
+/**
+ * Class OcCustomField
+ * 
+ * @property int $custom_field_id
+ * @property string $type
+ * @property string $value
+ * @property string $validation
+ * @property string $location
+ * @property bool $status
+ * @property int $sort_order
+ *
+ * @package App\Models
+ */
+class OcCustomField extends Eloquent
+{
+	protected $table = 'oc_custom_field';
+	protected $primaryKey = 'custom_field_id';
+	public $timestamps = false;
+
+	protected $casts = [
+		'status' => 'bool',
+		'sort_order' => 'int'
+	];
+
+	protected $fillable = [
+		'type',
+		'value',
+		'validation',
+		'location',
+		'status',
+		'sort_order'
+	];
+}
