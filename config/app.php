@@ -179,6 +179,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        //CORS Middleware for Laravel 5
+        Barryvdh\Cors\ServiceProvider::class,
     ],
 
     /*
