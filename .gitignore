@@ -18,6 +18,6 @@ Homestead.json
 
 #Php Storm
 .idea/
-
+.idea/*.iml
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
