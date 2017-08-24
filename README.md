@@ -27,6 +27,10 @@ www.domain.com/api/v1/products?token=[YOUR_SECRET_TOKEN]
 Creating Restful Controller
 
 ```
+php artisan make:controller v1\PostController --resource (With directory name)
+```
+
+```
 php artisan make:controller PostController --resource
 ```
 
