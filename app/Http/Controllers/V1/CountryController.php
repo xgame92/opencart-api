@@ -7,7 +7,10 @@ use App\Http\Controllers\Controller;
 use App\Models\OcCountry;
 use JWTAuth;
 use Illuminate\Support\Facades\Input;
-
+use App\Queries\V1\OpencartQueryBuilder;
+use Illuminate\Database\QueryException;
+use \Illuminate\Database\Eloquent\ModelNotFoundException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class CountryController extends Controller
 {
     public function __construct()
@@ -22,8 +25,6 @@ class CountryController extends Controller
      */
     public function index()
     {
-        $country = (new OcCountry())->newQuery();
-
         $country_id = Input::get('country_id');
         $name = Input::get('name');
         $iso_code_2 = Input::get('iso_code_2');
@@ -31,8 +32,23 @@ class CountryController extends Controller
         $address_format = Input::get('address_format');
         $postcode_required = Input::get('postcode_required');
         $status = Input::get('status');
+        /*
+                $country2 = new OcCountry([
+                    'country_id' => (int)$country_id,
+                    'name' => $name,
+                    'iso_code_2' => $iso_code_2,
+                    'iso_code_3' => $iso_code_3,
+                    'address_format' => $address_format,
+                    'postcode_required' => $postcode_required,
+                    'status' => $status,
+                ]);
+                $operatorArray = ['==','like','==','==','==','==','=='];
 
+                $query = (new OcCountry())->newQuery();
+                $query = OpencartQueryBuilder::Build($query,$country,$operatorArray);
+        */
 
+        $country = (new OcCountry())->newQuery();
         if(!is_null($country_id)){
             $country->where('country_id',$country_id);
         }
@@ -79,43 +95,45 @@ class CountryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'iso_code_2' => 'required',
-            'iso_code_3' => 'required',
-            'address_format' => 'required',
-            'postcode_required' => 'required',
-            'status' => 'required'
-        ]);
 
-        $name = $request->input('name');
-		$iso_code_2 = $request->input('iso_code_2');
-		$iso_code_3 = $request->input('iso_code_3');
-		$address_format = $request->input('address_format');
-		$postcode_required = $request->input('postcode_required');
-		$status = $request->input('status');
+            $this->validate($request, [
+                'name' => 'required',
+                'iso_code_2' => 'required',
+                'iso_code_3' => 'required',
+                'address_format' => 'required',
+                'postcode_required' => 'required',
+                'status' => 'required'
+            ]);
 
-		$country = new OcCountry([
-            'name' => $name,
-            'iso_code_2' => $iso_code_2,
-            'iso_code_3' => $iso_code_3,
-            'address_format' => $address_format,
-            'postcode_required' => $postcode_required,
-            'status' => $status
-        ]);
+            $name = $request->input('name');
+            $iso_code_2 = $request->input('iso_code_2');
+            $iso_code_3 = $request->input('iso_code_3');
+            $address_format = $request->input('address_format');
+            $postcode_required = $request->input('postcode_required');
+            $status = $request->input('status');
 
-        if($country->save()){
-            $country->view_country =[
-                'href' => 'api/v1/countries/' . $country->country_id,
-                'method' => 'GET'
+            $country = new OcCountry([
+                'name' => $name,
+                'iso_code_2' => $iso_code_2,
+                'iso_code_3' => $iso_code_3,
+                'address_format' => $address_format,
+                'postcode_required' => $postcode_required,
+                'status' => $status
+            ]);
+
+            if ($country = OcCountry::create($request->all())) {
+                $country->view_country = [
+                    'href' => 'api/v1/countries/' . $country->country_id,
+                    'method' => 'GET'
+                ];
+            }
+
+            $message = [
+                'msg' => 'Country created',
+                'country' => $country
             ];
-        }
+            return response()->json($message, 200);
 
-        $message = [
-          'msg' => 'Country created',
-          'country' => $country
-        ];
-        return response()->json($message, 200);
     }
 
     /**
@@ -126,9 +144,14 @@ class CountryController extends Controller
      */
     public function show($id)
     {
+        try{
+            $country = OcCountry::findOrFail($id);
 
-        $country = OcCountry::findOrFail(1);
-        return response()->json($country, 200);
+            return response()->json($country, 200);
+        }catch (Exception $e){
+            return response()->json(['msg' => 'There is problem with SQL Query','error' => $e], 500);
+        }
+
     }
 
     /**
@@ -149,9 +172,17 @@ class CountryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, OcCountry $country)
     {
-        //
+        try {
+            $country->update($request->all());
+            return response()->json($country, 200);
+
+        } catch (QueryException $e) {
+            return response()->json(['msg' => 'There is problem with SQL Query','error' => $e->errorInfo[2]], 500);
+
+        }
+
     }
 
     /**
