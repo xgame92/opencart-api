@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\OcCountry;
 use JWTAuth;
+use Illuminate\Support\Facades\Input;
 
 class CountryController extends Controller
 {
@@ -21,8 +22,43 @@ class CountryController extends Controller
      */
     public function index()
     {
-        $countries = OcCountry::all();
-        return response()->json($countries, 200);
+        $country = (new OcCountry())->newQuery();
+
+        $country_id = Input::get('country_id');
+        $name = Input::get('name');
+        $iso_code_2 = Input::get('iso_code_2');
+        $iso_code_3 = Input::get('iso_code_3');
+        $address_format = Input::get('address_format');
+        $postcode_required = Input::get('postcode_required');
+        $status = Input::get('status');
+
+
+        if(!is_null($country_id)){
+            $country->where('country_id',$country_id);
+        }
+        if(!is_null($name)){
+            $country->where('name','like',$name.'%');
+        }
+        if(!is_null($iso_code_2)){
+            $country->where('iso_code_2',$iso_code_2);
+        }
+        if(!is_null($iso_code_3)){
+            $country->where('iso_code_3',$iso_code_3);
+        }
+        if(!is_null($address_format)){
+            $country->where('address_format',$address_format);
+        }
+        if(!is_null($postcode_required)){
+            $country->where('postcode_required',$postcode_required);
+        }
+        if(!is_null($status)){
+            $country->where('status',$status);
+        }
+
+       // $countries = OcCountry::all();
+
+       // $country->where('name',$name);
+        return response()->json( $country->get(), 200);
     }
 
     /**
