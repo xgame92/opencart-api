@@ -8,6 +8,7 @@ The plugins that I used in this projects.
 | ------ | ------ |
 | jwt-auth | [JSON Web Token Authentication for Laravel & Lumen](https://github.com/tymondesigns/jwt-auth) |
 | laravel-cors | [Adds CORS (Cross-Origin Resource Sharing) headers support in your Laravel application](https://github.com/barryvdh/laravel-cors) |
+| reliese/laravel | [Laravel Components for code generation](https://github.com/reliese/laravel) |
 
 
 ### POSTMAN Configurations
