@@ -4,12 +4,15 @@ namespace App\Http\Controllers\V1;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-use App\ApiUser;
+use App\Models\OcCountry;
 use JWTAuth;
-use Tymon\JWTAuth\Exceptions\JWTException;
-class AuthController extends Controller
+
+class CountryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('jwt.auth');
+    }
 
     /**
      * Display a listing of the resource.
@@ -18,7 +21,8 @@ class AuthController extends Controller
      */
     public function index()
     {
-        //
+        $countries = OcCountry::all();
+        return response()->json($countries, 200);
     }
 
     /**
@@ -28,7 +32,7 @@ class AuthController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -41,59 +45,43 @@ class AuthController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:5'
+            'iso_code_2' => 'required',
+            'iso_code_3' => 'required',
+            'address_format' => 'required',
+            'postcode_required' => 'required',
+            'status' => 'required'
         ]);
 
         $name = $request->input('name');
-        $email = $request->input('email');
-        $password = $request->input('password');
+		$iso_code_2 = $request->input('iso_code_2');
+		$iso_code_3 = $request->input('iso_code_3');
+		$address_format = $request->input('address_format');
+		$postcode_required = $request->input('postcode_required');
+		$status = $request->input('status');
 
-        $user = new ApiUser([
+		$country = new OcCountry([
             'name' => $name,
-            'email' => $email,
-            'password' => bcrypt($password)
+            'iso_code_2' => $iso_code_2,
+            'iso_code_3' => $iso_code_3,
+            'address_format' => $address_format,
+            'postcode_required' => $postcode_required,
+            'status' => $status
         ]);
 
-        if ($user->save()) {
-            $user->signin = [
-                'href' => 'api/v1/user/signin',
-                'method' => 'POST',
-                'params' => 'email, password'
+        if($country->save()){
+            $country->view_country =[
+                'href' => 'api/v1/countries/' . $country->country_id,
+                'method' => 'GET'
             ];
-            $response = [
-                'msg' => 'User created',
-                'user' => $user
-            ];
-            return response()->json($response, 201);
         }
 
-        $response = [
-            'msg' => 'An error occurred'
+        $message = [
+          'msg' => 'Country created',
+          'country' => $country
         ];
-
-        return response()->json($response, 404);
+        return response()->json($message, 200);
     }
 
-    public function signin(Request $request)
-    {
-        $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
-
-        $credentials = $request->only('email', 'password');
-
-        try {
-            if (! $token = JWTAuth::attempt($credentials)) {
-                return response()->json(['msg' => 'Invalid credentials'], 401);
-            }
-        } catch (JWTException $e) {
-            return response()->json(['msg' => 'Could not create token'], 500);
-        }
-
-        return response()->json(['token' => $token]);
-    }
     /**
      * Display the specified resource.
      *
@@ -102,7 +90,9 @@ class AuthController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $country = OcCountry::findOrFail(1);
+        return response()->json($country, 200);
     }
 
     /**

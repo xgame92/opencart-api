@@ -21,8 +21,11 @@ Route::group(['prefix' => 'v1'], function (){
 
     //FOR AUTHENTICATION
     Route::resource('user','V1\AuthController');
-
     Route::post('user/signin',[
         'uses' => 'V1\AuthController@signin'
     ]);
+
+    // COUNTRY
+    Route::resource('countries','V1\CountryController');
+
 });
