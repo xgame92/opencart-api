@@ -8,7 +8,10 @@ The plugins that I used in this projects.
 | ------ | ------ |
 | jwt-auth | [JSON Web Token Authentication for Laravel & Lumen](https://github.com/tymondesigns/jwt-auth) |
 | laravel-cors | [Adds CORS (Cross-Origin Resource Sharing) headers support in your Laravel application](https://github.com/barryvdh/laravel-cors) |
+| reliese/laravel | [Laravel Components for code generation](https://github.com/reliese/laravel) |
+| esbenp/heimdal |[Heimdal is a Laravel exception handler build specifically for APIs.](https://github.com/esbenp/heimdal)|
 
+Notes: http://esbenp.github.io/2017/01/14/modern-rest-api-laravel-part-3/
 
 ### POSTMAN Configurations
 
@@ -53,3 +56,15 @@ php artisan migrate:reset // Rollback all migrations
 php artisan migrate:refresh // Rollback & migrate again
 
 ```
+
+Actions Handled By Resource Controller
+
+| Verb | URI | Action | Route Name|
+| ------ | ------ | ------ | ------ | 
+| GET | /photos | index |	photos.index |
+| GET | /photos/create | create | photos.create |
+| POST | /photos | store | photos.store |
+| GET |	/photos/{photo} | show | photos.show |
+| GET | /photos/{photo}/edit | edit | photos.edit |
+| PUT/PATCH | /photos/{photo} | update | photos.update |
+| DELETE | 	/photos/{photo}| destroy | photos.destroy |

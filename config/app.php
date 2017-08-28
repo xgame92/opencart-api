@@ -188,6 +188,10 @@ return [
          *JSON Web Token Authentication for Laravel & Lumen
          */
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+        /*
+         * Heimdal is a Laravel exception handler build specifically for APIs.
+         */
+        Optimus\Heimdal\Provider\LaravelServiceProvider::class,
     ],
 
     /*

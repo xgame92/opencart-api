@@ -41,6 +41,10 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+$app->singleton(
+    Illuminate\Contracts\Debug\ExceptionHandler::class,
+    Optimus\Heimdal\ExceptionHandler::class
+);
 /*
 |--------------------------------------------------------------------------
 | Return The Application
