@@ -10,8 +10,8 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcProductDescription
- * 
+ * Class OcProductDescription.
+ *
  * @property int $product_id
  * @property int $language_id
  * @property string $name
@@ -20,26 +20,24 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $meta_title
  * @property string $meta_description
  * @property string $meta_keyword
- *
- * @package App\Models
  */
 class OcProductDescription extends Eloquent
 {
-	protected $table = 'oc_product_description';
-	public $incrementing = false;
-	public $timestamps = false;
+    protected $table = 'oc_product_description';
+    public $incrementing = false;
+    public $timestamps = false;
 
-	protected $casts = [
-		'product_id' => 'int',
-		'language_id' => 'int'
-	];
+    protected $casts = [
+        'product_id'  => 'int',
+        'language_id' => 'int',
+    ];
 
-	protected $fillable = [
-		'name',
-		'description',
-		'tag',
-		'meta_title',
-		'meta_description',
-		'meta_keyword'
-	];
+    protected $fillable = [
+        'name',
+        'description',
+        'tag',
+        'meta_title',
+        'meta_description',
+        'meta_keyword',
+    ];
 }

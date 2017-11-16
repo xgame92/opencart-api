@@ -10,26 +10,24 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcAttributeGroupDescription
- * 
+ * Class OcAttributeGroupDescription.
+ *
  * @property int $attribute_group_id
  * @property int $language_id
  * @property string $name
- *
- * @package App\Models
  */
 class OcAttributeGroupDescription extends Eloquent
 {
-	protected $table = 'oc_attribute_group_description';
-	public $incrementing = false;
-	public $timestamps = false;
+    protected $table = 'oc_attribute_group_description';
+    public $incrementing = false;
+    public $timestamps = false;
 
-	protected $casts = [
-		'attribute_group_id' => 'int',
-		'language_id' => 'int'
-	];
+    protected $casts = [
+        'attribute_group_id' => 'int',
+        'language_id'        => 'int',
+    ];
 
-	protected $fillable = [
-		'name'
-	];
+    protected $fillable = [
+        'name',
+    ];
 }

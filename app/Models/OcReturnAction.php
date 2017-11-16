@@ -10,24 +10,22 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcReturnAction
- * 
+ * Class OcReturnAction.
+ *
  * @property int $return_action_id
  * @property int $language_id
  * @property string $name
- *
- * @package App\Models
  */
 class OcReturnAction extends Eloquent
 {
-	protected $table = 'oc_return_action';
-	public $timestamps = false;
+    protected $table = 'oc_return_action';
+    public $timestamps = false;
 
-	protected $casts = [
-		'language_id' => 'int'
-	];
+    protected $casts = [
+        'language_id' => 'int',
+    ];
 
-	protected $fillable = [
-		'name'
-	];
+    protected $fillable = [
+        'name',
+    ];
 }

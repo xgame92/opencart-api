@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('custom','CustomController',[
-    'only' => ['index', 'destroy']
+Route::resource('custom', 'CustomController', [
+    'only' => ['index', 'destroy'],
 ]);

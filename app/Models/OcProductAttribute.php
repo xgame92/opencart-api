@@ -10,28 +10,26 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcProductAttribute
- * 
+ * Class OcProductAttribute.
+ *
  * @property int $product_id
  * @property int $attribute_id
  * @property int $language_id
  * @property string $text
- *
- * @package App\Models
  */
 class OcProductAttribute extends Eloquent
 {
-	protected $table = 'oc_product_attribute';
-	public $incrementing = false;
-	public $timestamps = false;
+    protected $table = 'oc_product_attribute';
+    public $incrementing = false;
+    public $timestamps = false;
 
-	protected $casts = [
-		'product_id' => 'int',
-		'attribute_id' => 'int',
-		'language_id' => 'int'
-	];
+    protected $casts = [
+        'product_id'   => 'int',
+        'attribute_id' => 'int',
+        'language_id'  => 'int',
+    ];
 
-	protected $fillable = [
-		'text'
-	];
+    protected $fillable = [
+        'text',
+    ];
 }

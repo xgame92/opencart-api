@@ -10,21 +10,19 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcCouponCategory
- * 
+ * Class OcCouponCategory.
+ *
  * @property int $coupon_id
  * @property int $category_id
- *
- * @package App\Models
  */
 class OcCouponCategory extends Eloquent
 {
-	protected $table = 'oc_coupon_category';
-	public $incrementing = false;
-	public $timestamps = false;
+    protected $table = 'oc_coupon_category';
+    public $incrementing = false;
+    public $timestamps = false;
 
-	protected $casts = [
-		'coupon_id' => 'int',
-		'category_id' => 'int'
-	];
+    protected $casts = [
+        'coupon_id'   => 'int',
+        'category_id' => 'int',
+    ];
 }

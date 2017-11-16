@@ -10,24 +10,22 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcLengthClass
- * 
+ * Class OcLengthClass.
+ *
  * @property int $length_class_id
  * @property float $value
- *
- * @package App\Models
  */
 class OcLengthClass extends Eloquent
 {
-	protected $table = 'oc_length_class';
-	protected $primaryKey = 'length_class_id';
-	public $timestamps = false;
+    protected $table = 'oc_length_class';
+    protected $primaryKey = 'length_class_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'value' => 'float'
-	];
+    protected $casts = [
+        'value' => 'float',
+    ];
 
-	protected $fillable = [
-		'value'
-	];
+    protected $fillable = [
+        'value',
+    ];
 }

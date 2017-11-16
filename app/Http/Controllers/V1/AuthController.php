@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers\V1;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
 use App\ApiUser;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
+
 class AuthController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -34,15 +33,16 @@ class AuthController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:5'
+            'name'     => 'required',
+            'email'    => 'required|email',
+            'password' => 'required|min:5',
         ]);
 
         $name = $request->input('name');
@@ -50,26 +50,27 @@ class AuthController extends Controller
         $password = $request->input('password');
 
         $user = new ApiUser([
-            'name' => $name,
-            'email' => $email,
-            'password' => bcrypt($password)
+            'name'     => $name,
+            'email'    => $email,
+            'password' => bcrypt($password),
         ]);
 
         if ($user->save()) {
             $user->signin = [
-                'href' => 'api/v1/user/signin',
+                'href'   => 'api/v1/user/signin',
                 'method' => 'POST',
-                'params' => 'email, password'
+                'params' => 'email, password',
             ];
             $response = [
-                'msg' => 'User created',
-                'user' => $user
+                'msg'  => 'User created',
+                'user' => $user,
             ];
+
             return response()->json($response, 201);
         }
 
         $response = [
-            'msg' => 'An error occurred'
+            'msg' => 'An error occurred',
         ];
 
         return response()->json($response, 404);
@@ -78,14 +79,14 @@ class AuthController extends Controller
     public function signin(Request $request)
     {
         $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required'
+            'email'    => 'required|email',
+            'password' => 'required',
         ]);
 
         $credentials = $request->only('email', 'password');
 
         try {
-            if (! $token = JWTAuth::attempt($credentials)) {
+            if (!$token = JWTAuth::attempt($credentials)) {
                 return response()->json(['msg' => 'Invalid credentials'], 401);
             }
         } catch (JWTException $e) {
@@ -94,10 +95,12 @@ class AuthController extends Controller
 
         return response()->json(['token' => $token]);
     }
+
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -108,7 +111,8 @@ class AuthController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -119,8 +123,9 @@ class AuthController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -131,7 +136,8 @@ class AuthController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

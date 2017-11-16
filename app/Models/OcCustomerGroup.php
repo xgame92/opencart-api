@@ -10,27 +10,25 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcCustomerGroup
- * 
+ * Class OcCustomerGroup.
+ *
  * @property int $customer_group_id
  * @property int $approval
  * @property int $sort_order
- *
- * @package App\Models
  */
 class OcCustomerGroup extends Eloquent
 {
-	protected $table = 'oc_customer_group';
-	protected $primaryKey = 'customer_group_id';
-	public $timestamps = false;
+    protected $table = 'oc_customer_group';
+    protected $primaryKey = 'customer_group_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'approval' => 'int',
-		'sort_order' => 'int'
-	];
+    protected $casts = [
+        'approval'   => 'int',
+        'sort_order' => 'int',
+    ];
 
-	protected $fillable = [
-		'approval',
-		'sort_order'
-	];
+    protected $fillable = [
+        'approval',
+        'sort_order',
+    ];
 }

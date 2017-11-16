@@ -10,21 +10,19 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcTaxRateToCustomerGroup
- * 
+ * Class OcTaxRateToCustomerGroup.
+ *
  * @property int $tax_rate_id
  * @property int $customer_group_id
- *
- * @package App\Models
  */
 class OcTaxRateToCustomerGroup extends Eloquent
 {
-	protected $table = 'oc_tax_rate_to_customer_group';
-	public $incrementing = false;
-	public $timestamps = false;
+    protected $table = 'oc_tax_rate_to_customer_group';
+    public $incrementing = false;
+    public $timestamps = false;
 
-	protected $casts = [
-		'tax_rate_id' => 'int',
-		'customer_group_id' => 'int'
-	];
+    protected $casts = [
+        'tax_rate_id'       => 'int',
+        'customer_group_id' => 'int',
+    ];
 }

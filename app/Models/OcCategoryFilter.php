@@ -10,21 +10,19 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcCategoryFilter
- * 
+ * Class OcCategoryFilter.
+ *
  * @property int $category_id
  * @property int $filter_id
- *
- * @package App\Models
  */
 class OcCategoryFilter extends Eloquent
 {
-	protected $table = 'oc_category_filter';
-	public $incrementing = false;
-	public $timestamps = false;
+    protected $table = 'oc_category_filter';
+    public $incrementing = false;
+    public $timestamps = false;
 
-	protected $casts = [
-		'category_id' => 'int',
-		'filter_id' => 'int'
-	];
+    protected $casts = [
+        'category_id' => 'int',
+        'filter_id'   => 'int',
+    ];
 }

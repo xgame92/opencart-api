@@ -10,8 +10,8 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcLocation
- * 
+ * Class OcLocation.
+ *
  * @property int $location_id
  * @property string $name
  * @property string $address
@@ -21,23 +21,21 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $image
  * @property string $open
  * @property string $comment
- *
- * @package App\Models
  */
 class OcLocation extends Eloquent
 {
-	protected $table = 'oc_location';
-	protected $primaryKey = 'location_id';
-	public $timestamps = false;
+    protected $table = 'oc_location';
+    protected $primaryKey = 'location_id';
+    public $timestamps = false;
 
-	protected $fillable = [
-		'name',
-		'address',
-		'telephone',
-		'fax',
-		'geocode',
-		'image',
-		'open',
-		'comment'
-	];
+    protected $fillable = [
+        'name',
+        'address',
+        'telephone',
+        'fax',
+        'geocode',
+        'image',
+        'open',
+        'comment',
+    ];
 }

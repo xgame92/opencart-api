@@ -10,32 +10,30 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcExtensionInstall
- * 
+ * Class OcExtensionInstall.
+ *
  * @property int $extension_install_id
  * @property int $extension_download_id
  * @property string $filename
  * @property \Carbon\Carbon $date_added
- *
- * @package App\Models
  */
 class OcExtensionInstall extends Eloquent
 {
-	protected $table = 'oc_extension_install';
-	protected $primaryKey = 'extension_install_id';
-	public $timestamps = false;
+    protected $table = 'oc_extension_install';
+    protected $primaryKey = 'extension_install_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'extension_download_id' => 'int'
-	];
+    protected $casts = [
+        'extension_download_id' => 'int',
+    ];
 
-	protected $dates = [
-		'date_added'
-	];
+    protected $dates = [
+        'date_added',
+    ];
 
-	protected $fillable = [
-		'extension_download_id',
-		'filename',
-		'date_added'
-	];
+    protected $fillable = [
+        'extension_download_id',
+        'filename',
+        'date_added',
+    ];
 }

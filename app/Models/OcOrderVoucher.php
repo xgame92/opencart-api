@@ -10,8 +10,8 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcOrderVoucher
- * 
+ * Class OcOrderVoucher.
+ *
  * @property int $order_voucher_id
  * @property int $order_id
  * @property int $voucher_id
@@ -24,33 +24,31 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $voucher_theme_id
  * @property string $message
  * @property float $amount
- *
- * @package App\Models
  */
 class OcOrderVoucher extends Eloquent
 {
-	protected $table = 'oc_order_voucher';
-	protected $primaryKey = 'order_voucher_id';
-	public $timestamps = false;
+    protected $table = 'oc_order_voucher';
+    protected $primaryKey = 'order_voucher_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'order_id' => 'int',
-		'voucher_id' => 'int',
-		'voucher_theme_id' => 'int',
-		'amount' => 'float'
-	];
+    protected $casts = [
+        'order_id'         => 'int',
+        'voucher_id'       => 'int',
+        'voucher_theme_id' => 'int',
+        'amount'           => 'float',
+    ];
 
-	protected $fillable = [
-		'order_id',
-		'voucher_id',
-		'description',
-		'code',
-		'from_name',
-		'from_email',
-		'to_name',
-		'to_email',
-		'voucher_theme_id',
-		'message',
-		'amount'
-	];
+    protected $fillable = [
+        'order_id',
+        'voucher_id',
+        'description',
+        'code',
+        'from_name',
+        'from_email',
+        'to_name',
+        'to_email',
+        'voucher_theme_id',
+        'message',
+        'amount',
+    ];
 }

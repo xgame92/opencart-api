@@ -10,30 +10,28 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcCustomerWishlist
- * 
+ * Class OcCustomerWishlist.
+ *
  * @property int $customer_id
  * @property int $product_id
  * @property \Carbon\Carbon $date_added
- *
- * @package App\Models
  */
 class OcCustomerWishlist extends Eloquent
 {
-	protected $table = 'oc_customer_wishlist';
-	public $incrementing = false;
-	public $timestamps = false;
+    protected $table = 'oc_customer_wishlist';
+    public $incrementing = false;
+    public $timestamps = false;
 
-	protected $casts = [
-		'customer_id' => 'int',
-		'product_id' => 'int'
-	];
+    protected $casts = [
+        'customer_id' => 'int',
+        'product_id'  => 'int',
+    ];
 
-	protected $dates = [
-		'date_added'
-	];
+    protected $dates = [
+        'date_added',
+    ];
 
-	protected $fillable = [
-		'date_added'
-	];
+    protected $fillable = [
+        'date_added',
+    ];
 }

@@ -10,8 +10,8 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcCountry
- * 
+ * Class OcCountry.
+ *
  * @property int $country_id
  * @property string $name
  * @property string $iso_code_2
@@ -19,26 +19,24 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $address_format
  * @property bool $postcode_required
  * @property bool $status
- *
- * @package App\Models
  */
 class OcCountry extends Eloquent
 {
-	protected $table = 'oc_country';
-	protected $primaryKey = 'country_id';
-	public $timestamps = false;
+    protected $table = 'oc_country';
+    protected $primaryKey = 'country_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'postcode_required' => 'bool',
-		'status' => 'bool'
-	];
+    protected $casts = [
+        'postcode_required' => 'bool',
+        'status'            => 'bool',
+    ];
 
-	protected $fillable = [
-		'name',
-		'iso_code_2',
-		'iso_code_3',
-		'address_format',
-		'postcode_required',
-		'status'
-	];
+    protected $fillable = [
+        'name',
+        'iso_code_2',
+        'iso_code_3',
+        'address_format',
+        'postcode_required',
+        'status',
+    ];
 }

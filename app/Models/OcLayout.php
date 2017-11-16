@@ -10,20 +10,18 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcLayout
- * 
+ * Class OcLayout.
+ *
  * @property int $layout_id
  * @property string $name
- *
- * @package App\Models
  */
 class OcLayout extends Eloquent
 {
-	protected $table = 'oc_layout';
-	protected $primaryKey = 'layout_id';
-	public $timestamps = false;
+    protected $table = 'oc_layout';
+    protected $primaryKey = 'layout_id';
+    public $timestamps = false;
 
-	protected $fillable = [
-		'name'
-	];
+    protected $fillable = [
+        'name',
+    ];
 }

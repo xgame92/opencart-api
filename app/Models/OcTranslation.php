@@ -10,8 +10,8 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcTranslation
- * 
+ * Class OcTranslation.
+ *
  * @property int $translation_id
  * @property int $store_id
  * @property int $language_id
@@ -19,30 +19,28 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $key
  * @property string $value
  * @property \Carbon\Carbon $date_added
- *
- * @package App\Models
  */
 class OcTranslation extends Eloquent
 {
-	protected $table = 'oc_translation';
-	protected $primaryKey = 'translation_id';
-	public $timestamps = false;
+    protected $table = 'oc_translation';
+    protected $primaryKey = 'translation_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'store_id' => 'int',
-		'language_id' => 'int'
-	];
+    protected $casts = [
+        'store_id'    => 'int',
+        'language_id' => 'int',
+    ];
 
-	protected $dates = [
-		'date_added'
-	];
+    protected $dates = [
+        'date_added',
+    ];
 
-	protected $fillable = [
-		'store_id',
-		'language_id',
-		'route',
-		'key',
-		'value',
-		'date_added'
-	];
+    protected $fillable = [
+        'store_id',
+        'language_id',
+        'route',
+        'key',
+        'value',
+        'date_added',
+    ];
 }

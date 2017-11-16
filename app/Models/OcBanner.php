@@ -10,26 +10,24 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcBanner
- * 
+ * Class OcBanner.
+ *
  * @property int $banner_id
  * @property string $name
  * @property bool $status
- *
- * @package App\Models
  */
 class OcBanner extends Eloquent
 {
-	protected $table = 'oc_banner';
-	protected $primaryKey = 'banner_id';
-	public $timestamps = false;
+    protected $table = 'oc_banner';
+    protected $primaryKey = 'banner_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'status' => 'bool'
-	];
+    protected $casts = [
+        'status' => 'bool',
+    ];
 
-	protected $fillable = [
-		'name',
-		'status'
-	];
+    protected $fillable = [
+        'name',
+        'status',
+    ];
 }

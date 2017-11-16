@@ -10,8 +10,8 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcCart
- * 
+ * Class OcCart.
+ *
  * @property int $cart_id
  * @property int $api_id
  * @property int $customer_id
@@ -21,35 +21,33 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $option
  * @property int $quantity
  * @property \Carbon\Carbon $date_added
- *
- * @package App\Models
  */
 class OcCart extends Eloquent
 {
-	protected $table = 'oc_cart';
-	protected $primaryKey = 'cart_id';
-	public $timestamps = false;
+    protected $table = 'oc_cart';
+    protected $primaryKey = 'cart_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'api_id' => 'int',
-		'customer_id' => 'int',
-		'product_id' => 'int',
-		'recurring_id' => 'int',
-		'quantity' => 'int'
-	];
+    protected $casts = [
+        'api_id'       => 'int',
+        'customer_id'  => 'int',
+        'product_id'   => 'int',
+        'recurring_id' => 'int',
+        'quantity'     => 'int',
+    ];
 
-	protected $dates = [
-		'date_added'
-	];
+    protected $dates = [
+        'date_added',
+    ];
 
-	protected $fillable = [
-		'api_id',
-		'customer_id',
-		'session_id',
-		'product_id',
-		'recurring_id',
-		'option',
-		'quantity',
-		'date_added'
-	];
+    protected $fillable = [
+        'api_id',
+        'customer_id',
+        'session_id',
+        'product_id',
+        'recurring_id',
+        'option',
+        'quantity',
+        'date_added',
+    ];
 }

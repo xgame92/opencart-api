@@ -10,27 +10,25 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcFilter
- * 
+ * Class OcFilter.
+ *
  * @property int $filter_id
  * @property int $filter_group_id
  * @property int $sort_order
- *
- * @package App\Models
  */
 class OcFilter extends Eloquent
 {
-	protected $table = 'oc_filter';
-	protected $primaryKey = 'filter_id';
-	public $timestamps = false;
+    protected $table = 'oc_filter';
+    protected $primaryKey = 'filter_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'filter_group_id' => 'int',
-		'sort_order' => 'int'
-	];
+    protected $casts = [
+        'filter_group_id' => 'int',
+        'sort_order'      => 'int',
+    ];
 
-	protected $fillable = [
-		'filter_group_id',
-		'sort_order'
-	];
+    protected $fillable = [
+        'filter_group_id',
+        'sort_order',
+    ];
 }

@@ -10,21 +10,19 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcCategoryToStore
- * 
+ * Class OcCategoryToStore.
+ *
  * @property int $category_id
  * @property int $store_id
- *
- * @package App\Models
  */
 class OcCategoryToStore extends Eloquent
 {
-	protected $table = 'oc_category_to_store';
-	public $incrementing = false;
-	public $timestamps = false;
+    protected $table = 'oc_category_to_store';
+    public $incrementing = false;
+    public $timestamps = false;
 
-	protected $casts = [
-		'category_id' => 'int',
-		'store_id' => 'int'
-	];
+    protected $casts = [
+        'category_id' => 'int',
+        'store_id'    => 'int',
+    ];
 }
