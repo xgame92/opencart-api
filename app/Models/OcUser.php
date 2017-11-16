@@ -10,8 +10,8 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcUser
- * 
+ * Class OcUser.
+ *
  * @property int $user_id
  * @property int $user_group_id
  * @property string $username
@@ -25,40 +25,38 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $ip
  * @property bool $status
  * @property \Carbon\Carbon $date_added
- *
- * @package App\Models
  */
 class OcUser extends Eloquent
 {
-	protected $table = 'oc_user';
-	protected $primaryKey = 'user_id';
-	public $timestamps = false;
+    protected $table = 'oc_user';
+    protected $primaryKey = 'user_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'user_group_id' => 'int',
-		'status' => 'bool'
-	];
+    protected $casts = [
+        'user_group_id' => 'int',
+        'status'        => 'bool',
+    ];
 
-	protected $dates = [
-		'date_added'
-	];
+    protected $dates = [
+        'date_added',
+    ];
 
-	protected $hidden = [
-		'password'
-	];
+    protected $hidden = [
+        'password',
+    ];
 
-	protected $fillable = [
-		'user_group_id',
-		'username',
-		'password',
-		'salt',
-		'firstname',
-		'lastname',
-		'email',
-		'image',
-		'code',
-		'ip',
-		'status',
-		'date_added'
-	];
+    protected $fillable = [
+        'user_group_id',
+        'username',
+        'password',
+        'salt',
+        'firstname',
+        'lastname',
+        'email',
+        'image',
+        'code',
+        'ip',
+        'status',
+        'date_added',
+    ];
 }

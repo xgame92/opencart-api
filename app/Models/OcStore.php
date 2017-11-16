@@ -10,24 +10,22 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcStore
- * 
+ * Class OcStore.
+ *
  * @property int $store_id
  * @property string $name
  * @property string $url
  * @property string $ssl
- *
- * @package App\Models
  */
 class OcStore extends Eloquent
 {
-	protected $table = 'oc_store';
-	protected $primaryKey = 'store_id';
-	public $timestamps = false;
+    protected $table = 'oc_store';
+    protected $primaryKey = 'store_id';
+    public $timestamps = false;
 
-	protected $fillable = [
-		'name',
-		'url',
-		'ssl'
-	];
+    protected $fillable = [
+        'name',
+        'url',
+        'ssl',
+    ];
 }

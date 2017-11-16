@@ -10,8 +10,8 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcCurrency
- * 
+ * Class OcCurrency.
+ *
  * @property int $currency_id
  * @property string $title
  * @property string $code
@@ -21,32 +21,30 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property float $value
  * @property bool $status
  * @property \Carbon\Carbon $date_modified
- *
- * @package App\Models
  */
 class OcCurrency extends Eloquent
 {
-	protected $table = 'oc_currency';
-	protected $primaryKey = 'currency_id';
-	public $timestamps = false;
+    protected $table = 'oc_currency';
+    protected $primaryKey = 'currency_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'value' => 'float',
-		'status' => 'bool'
-	];
+    protected $casts = [
+        'value'  => 'float',
+        'status' => 'bool',
+    ];
 
-	protected $dates = [
-		'date_modified'
-	];
+    protected $dates = [
+        'date_modified',
+    ];
 
-	protected $fillable = [
-		'title',
-		'code',
-		'symbol_left',
-		'symbol_right',
-		'decimal_place',
-		'value',
-		'status',
-		'date_modified'
-	];
+    protected $fillable = [
+        'title',
+        'code',
+        'symbol_left',
+        'symbol_right',
+        'decimal_place',
+        'value',
+        'status',
+        'date_modified',
+    ];
 }

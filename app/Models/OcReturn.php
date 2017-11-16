@@ -10,8 +10,8 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcReturn
- * 
+ * Class OcReturn.
+ *
  * @property int $return_id
  * @property int $order_id
  * @property int $product_id
@@ -31,50 +31,48 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property \Carbon\Carbon $date_ordered
  * @property \Carbon\Carbon $date_added
  * @property \Carbon\Carbon $date_modified
- *
- * @package App\Models
  */
 class OcReturn extends Eloquent
 {
-	protected $table = 'oc_return';
-	protected $primaryKey = 'return_id';
-	public $timestamps = false;
+    protected $table = 'oc_return';
+    protected $primaryKey = 'return_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'order_id' => 'int',
-		'product_id' => 'int',
-		'customer_id' => 'int',
-		'quantity' => 'int',
-		'opened' => 'bool',
-		'return_reason_id' => 'int',
-		'return_action_id' => 'int',
-		'return_status_id' => 'int'
-	];
+    protected $casts = [
+        'order_id'         => 'int',
+        'product_id'       => 'int',
+        'customer_id'      => 'int',
+        'quantity'         => 'int',
+        'opened'           => 'bool',
+        'return_reason_id' => 'int',
+        'return_action_id' => 'int',
+        'return_status_id' => 'int',
+    ];
 
-	protected $dates = [
-		'date_ordered',
-		'date_added',
-		'date_modified'
-	];
+    protected $dates = [
+        'date_ordered',
+        'date_added',
+        'date_modified',
+    ];
 
-	protected $fillable = [
-		'order_id',
-		'product_id',
-		'customer_id',
-		'firstname',
-		'lastname',
-		'email',
-		'telephone',
-		'product',
-		'model',
-		'quantity',
-		'opened',
-		'return_reason_id',
-		'return_action_id',
-		'return_status_id',
-		'comment',
-		'date_ordered',
-		'date_added',
-		'date_modified'
-	];
+    protected $fillable = [
+        'order_id',
+        'product_id',
+        'customer_id',
+        'firstname',
+        'lastname',
+        'email',
+        'telephone',
+        'product',
+        'model',
+        'quantity',
+        'opened',
+        'return_reason_id',
+        'return_action_id',
+        'return_status_id',
+        'comment',
+        'date_ordered',
+        'date_added',
+        'date_modified',
+    ];
 }

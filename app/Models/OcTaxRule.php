@@ -10,32 +10,30 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcTaxRule
- * 
+ * Class OcTaxRule.
+ *
  * @property int $tax_rule_id
  * @property int $tax_class_id
  * @property int $tax_rate_id
  * @property string $based
  * @property int $priority
- *
- * @package App\Models
  */
 class OcTaxRule extends Eloquent
 {
-	protected $table = 'oc_tax_rule';
-	protected $primaryKey = 'tax_rule_id';
-	public $timestamps = false;
+    protected $table = 'oc_tax_rule';
+    protected $primaryKey = 'tax_rule_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'tax_class_id' => 'int',
-		'tax_rate_id' => 'int',
-		'priority' => 'int'
-	];
+    protected $casts = [
+        'tax_class_id' => 'int',
+        'tax_rate_id'  => 'int',
+        'priority'     => 'int',
+    ];
 
-	protected $fillable = [
-		'tax_class_id',
-		'tax_rate_id',
-		'based',
-		'priority'
-	];
+    protected $fillable = [
+        'tax_class_id',
+        'tax_rate_id',
+        'based',
+        'priority',
+    ];
 }

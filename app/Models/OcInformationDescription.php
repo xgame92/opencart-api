@@ -10,8 +10,8 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcInformationDescription
- * 
+ * Class OcInformationDescription.
+ *
  * @property int $information_id
  * @property int $language_id
  * @property string $title
@@ -19,25 +19,23 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $meta_title
  * @property string $meta_description
  * @property string $meta_keyword
- *
- * @package App\Models
  */
 class OcInformationDescription extends Eloquent
 {
-	protected $table = 'oc_information_description';
-	public $incrementing = false;
-	public $timestamps = false;
+    protected $table = 'oc_information_description';
+    public $incrementing = false;
+    public $timestamps = false;
 
-	protected $casts = [
-		'information_id' => 'int',
-		'language_id' => 'int'
-	];
+    protected $casts = [
+        'information_id' => 'int',
+        'language_id'    => 'int',
+    ];
 
-	protected $fillable = [
-		'title',
-		'description',
-		'meta_title',
-		'meta_description',
-		'meta_keyword'
-	];
+    protected $fillable = [
+        'title',
+        'description',
+        'meta_title',
+        'meta_description',
+        'meta_keyword',
+    ];
 }

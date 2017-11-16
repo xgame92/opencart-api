@@ -10,27 +10,25 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcSession
- * 
+ * Class OcSession.
+ *
  * @property string $session_id
  * @property string $data
  * @property \Carbon\Carbon $expire
- *
- * @package App\Models
  */
 class OcSession extends Eloquent
 {
-	protected $table = 'oc_session';
-	protected $primaryKey = 'session_id';
-	public $incrementing = false;
-	public $timestamps = false;
+    protected $table = 'oc_session';
+    protected $primaryKey = 'session_id';
+    public $incrementing = false;
+    public $timestamps = false;
 
-	protected $dates = [
-		'expire'
-	];
+    protected $dates = [
+        'expire',
+    ];
 
-	protected $fillable = [
-		'data',
-		'expire'
-	];
+    protected $fillable = [
+        'data',
+        'expire',
+    ];
 }

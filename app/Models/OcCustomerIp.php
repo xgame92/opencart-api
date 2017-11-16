@@ -10,32 +10,30 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcCustomerIp
- * 
+ * Class OcCustomerIp.
+ *
  * @property int $customer_ip_id
  * @property int $customer_id
  * @property string $ip
  * @property \Carbon\Carbon $date_added
- *
- * @package App\Models
  */
 class OcCustomerIp extends Eloquent
 {
-	protected $table = 'oc_customer_ip';
-	protected $primaryKey = 'customer_ip_id';
-	public $timestamps = false;
+    protected $table = 'oc_customer_ip';
+    protected $primaryKey = 'customer_ip_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'customer_id' => 'int'
-	];
+    protected $casts = [
+        'customer_id' => 'int',
+    ];
 
-	protected $dates = [
-		'date_added'
-	];
+    protected $dates = [
+        'date_added',
+    ];
 
-	protected $fillable = [
-		'customer_id',
-		'ip',
-		'date_added'
-	];
+    protected $fillable = [
+        'customer_id',
+        'ip',
+        'date_added',
+    ];
 }

@@ -10,28 +10,26 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcDownload
- * 
+ * Class OcDownload.
+ *
  * @property int $download_id
  * @property string $filename
  * @property string $mask
  * @property \Carbon\Carbon $date_added
- *
- * @package App\Models
  */
 class OcDownload extends Eloquent
 {
-	protected $table = 'oc_download';
-	protected $primaryKey = 'download_id';
-	public $timestamps = false;
+    protected $table = 'oc_download';
+    protected $primaryKey = 'download_id';
+    public $timestamps = false;
 
-	protected $dates = [
-		'date_added'
-	];
+    protected $dates = [
+        'date_added',
+    ];
 
-	protected $fillable = [
-		'filename',
-		'mask',
-		'date_added'
-	];
+    protected $fillable = [
+        'filename',
+        'mask',
+        'date_added',
+    ];
 }

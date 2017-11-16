@@ -10,31 +10,29 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcTaxClass
- * 
+ * Class OcTaxClass.
+ *
  * @property int $tax_class_id
  * @property string $title
  * @property string $description
  * @property \Carbon\Carbon $date_added
  * @property \Carbon\Carbon $date_modified
- *
- * @package App\Models
  */
 class OcTaxClass extends Eloquent
 {
-	protected $table = 'oc_tax_class';
-	protected $primaryKey = 'tax_class_id';
-	public $timestamps = false;
+    protected $table = 'oc_tax_class';
+    protected $primaryKey = 'tax_class_id';
+    public $timestamps = false;
 
-	protected $dates = [
-		'date_added',
-		'date_modified'
-	];
+    protected $dates = [
+        'date_added',
+        'date_modified',
+    ];
 
-	protected $fillable = [
-		'title',
-		'description',
-		'date_added',
-		'date_modified'
-	];
+    protected $fillable = [
+        'title',
+        'description',
+        'date_added',
+        'date_modified',
+    ];
 }

@@ -10,22 +10,20 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcExtension
- * 
+ * Class OcExtension.
+ *
  * @property int $extension_id
  * @property string $type
  * @property string $code
- *
- * @package App\Models
  */
 class OcExtension extends Eloquent
 {
-	protected $table = 'oc_extension';
-	protected $primaryKey = 'extension_id';
-	public $timestamps = false;
+    protected $table = 'oc_extension';
+    protected $primaryKey = 'extension_id';
+    public $timestamps = false;
 
-	protected $fillable = [
-		'type',
-		'code'
-	];
+    protected $fillable = [
+        'type',
+        'code',
+    ];
 }

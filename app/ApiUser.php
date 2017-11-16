@@ -2,8 +2,8 @@
 
 namespace App;
 
-
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
 class ApiUser extends Authenticatable
 {
     /**
@@ -12,7 +12,6 @@ class ApiUser extends Authenticatable
      * @var string
      */
     protected $table = 'api_user';
-
 
     /**
      * The attributes that are mass assignable.

@@ -10,26 +10,24 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcCustomFieldDescription
- * 
+ * Class OcCustomFieldDescription.
+ *
  * @property int $custom_field_id
  * @property int $language_id
  * @property string $name
- *
- * @package App\Models
  */
 class OcCustomFieldDescription extends Eloquent
 {
-	protected $table = 'oc_custom_field_description';
-	public $incrementing = false;
-	public $timestamps = false;
+    protected $table = 'oc_custom_field_description';
+    public $incrementing = false;
+    public $timestamps = false;
 
-	protected $casts = [
-		'custom_field_id' => 'int',
-		'language_id' => 'int'
-	];
+    protected $casts = [
+        'custom_field_id' => 'int',
+        'language_id'     => 'int',
+    ];
 
-	protected $fillable = [
-		'name'
-	];
+    protected $fillable = [
+        'name',
+    ];
 }

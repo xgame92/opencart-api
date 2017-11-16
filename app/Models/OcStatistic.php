@@ -10,25 +10,23 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcStatistic
- * 
+ * Class OcStatistic.
+ *
  * @property int $statistics_id
  * @property string $code
  * @property float $value
- *
- * @package App\Models
  */
 class OcStatistic extends Eloquent
 {
-	protected $primaryKey = 'statistics_id';
-	public $timestamps = false;
+    protected $primaryKey = 'statistics_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'value' => 'float'
-	];
+    protected $casts = [
+        'value' => 'float',
+    ];
 
-	protected $fillable = [
-		'code',
-		'value'
-	];
+    protected $fillable = [
+        'code',
+        'value',
+    ];
 }

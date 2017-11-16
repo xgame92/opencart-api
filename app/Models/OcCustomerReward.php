@@ -10,38 +10,36 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcCustomerReward
- * 
+ * Class OcCustomerReward.
+ *
  * @property int $customer_reward_id
  * @property int $customer_id
  * @property int $order_id
  * @property string $description
  * @property int $points
  * @property \Carbon\Carbon $date_added
- *
- * @package App\Models
  */
 class OcCustomerReward extends Eloquent
 {
-	protected $table = 'oc_customer_reward';
-	protected $primaryKey = 'customer_reward_id';
-	public $timestamps = false;
+    protected $table = 'oc_customer_reward';
+    protected $primaryKey = 'customer_reward_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'customer_id' => 'int',
-		'order_id' => 'int',
-		'points' => 'int'
-	];
+    protected $casts = [
+        'customer_id' => 'int',
+        'order_id'    => 'int',
+        'points'      => 'int',
+    ];
 
-	protected $dates = [
-		'date_added'
-	];
+    protected $dates = [
+        'date_added',
+    ];
 
-	protected $fillable = [
-		'customer_id',
-		'order_id',
-		'description',
-		'points',
-		'date_added'
-	];
+    protected $fillable = [
+        'customer_id',
+        'order_id',
+        'description',
+        'points',
+        'date_added',
+    ];
 }

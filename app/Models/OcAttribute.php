@@ -10,27 +10,25 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcAttribute
- * 
+ * Class OcAttribute.
+ *
  * @property int $attribute_id
  * @property int $attribute_group_id
  * @property int $sort_order
- *
- * @package App\Models
  */
 class OcAttribute extends Eloquent
 {
-	protected $table = 'oc_attribute';
-	protected $primaryKey = 'attribute_id';
-	public $timestamps = false;
+    protected $table = 'oc_attribute';
+    protected $primaryKey = 'attribute_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'attribute_group_id' => 'int',
-		'sort_order' => 'int'
-	];
+    protected $casts = [
+        'attribute_group_id' => 'int',
+        'sort_order'         => 'int',
+    ];
 
-	protected $fillable = [
-		'attribute_group_id',
-		'sort_order'
-	];
+    protected $fillable = [
+        'attribute_group_id',
+        'sort_order',
+    ];
 }

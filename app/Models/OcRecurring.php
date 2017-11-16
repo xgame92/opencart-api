@@ -10,8 +10,8 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcRecurring
- * 
+ * Class OcRecurring.
+ *
  * @property int $recurring_id
  * @property float $price
  * @property string $frequency
@@ -24,38 +24,36 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $trial_cycle
  * @property int $status
  * @property int $sort_order
- *
- * @package App\Models
  */
 class OcRecurring extends Eloquent
 {
-	protected $table = 'oc_recurring';
-	protected $primaryKey = 'recurring_id';
-	public $timestamps = false;
+    protected $table = 'oc_recurring';
+    protected $primaryKey = 'recurring_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'price' => 'float',
-		'duration' => 'int',
-		'cycle' => 'int',
-		'trial_status' => 'int',
-		'trial_price' => 'float',
-		'trial_duration' => 'int',
-		'trial_cycle' => 'int',
-		'status' => 'int',
-		'sort_order' => 'int'
-	];
+    protected $casts = [
+        'price'          => 'float',
+        'duration'       => 'int',
+        'cycle'          => 'int',
+        'trial_status'   => 'int',
+        'trial_price'    => 'float',
+        'trial_duration' => 'int',
+        'trial_cycle'    => 'int',
+        'status'         => 'int',
+        'sort_order'     => 'int',
+    ];
 
-	protected $fillable = [
-		'price',
-		'frequency',
-		'duration',
-		'cycle',
-		'trial_status',
-		'trial_price',
-		'trial_frequency',
-		'trial_duration',
-		'trial_cycle',
-		'status',
-		'sort_order'
-	];
+    protected $fillable = [
+        'price',
+        'frequency',
+        'duration',
+        'cycle',
+        'trial_status',
+        'trial_price',
+        'trial_frequency',
+        'trial_duration',
+        'trial_cycle',
+        'status',
+        'sort_order',
+    ];
 }

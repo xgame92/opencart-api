@@ -10,23 +10,21 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcProductRecurring
- * 
+ * Class OcProductRecurring.
+ *
  * @property int $product_id
  * @property int $recurring_id
  * @property int $customer_group_id
- *
- * @package App\Models
  */
 class OcProductRecurring extends Eloquent
 {
-	protected $table = 'oc_product_recurring';
-	public $incrementing = false;
-	public $timestamps = false;
+    protected $table = 'oc_product_recurring';
+    public $incrementing = false;
+    public $timestamps = false;
 
-	protected $casts = [
-		'product_id' => 'int',
-		'recurring_id' => 'int',
-		'customer_group_id' => 'int'
-	];
+    protected $casts = [
+        'product_id'        => 'int',
+        'recurring_id'      => 'int',
+        'customer_group_id' => 'int',
+    ];
 }

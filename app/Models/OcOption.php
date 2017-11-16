@@ -10,26 +10,24 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcOption
- * 
+ * Class OcOption.
+ *
  * @property int $option_id
  * @property string $type
  * @property int $sort_order
- *
- * @package App\Models
  */
 class OcOption extends Eloquent
 {
-	protected $table = 'oc_option';
-	protected $primaryKey = 'option_id';
-	public $timestamps = false;
+    protected $table = 'oc_option';
+    protected $primaryKey = 'option_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'sort_order' => 'int'
-	];
+    protected $casts = [
+        'sort_order' => 'int',
+    ];
 
-	protected $fillable = [
-		'type',
-		'sort_order'
-	];
+    protected $fillable = [
+        'type',
+        'sort_order',
+    ];
 }

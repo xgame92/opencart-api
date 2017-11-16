@@ -10,8 +10,8 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcOrderRecurring
- * 
+ * Class OcOrderRecurring.
+ *
  * @property int $order_recurring_id
  * @property int $order_id
  * @property string $reference
@@ -32,53 +32,51 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property float $trial_price
  * @property int $status
  * @property \Carbon\Carbon $date_added
- *
- * @package App\Models
  */
 class OcOrderRecurring extends Eloquent
 {
-	protected $table = 'oc_order_recurring';
-	protected $primaryKey = 'order_recurring_id';
-	public $timestamps = false;
+    protected $table = 'oc_order_recurring';
+    protected $primaryKey = 'order_recurring_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'order_id' => 'int',
-		'product_id' => 'int',
-		'product_quantity' => 'int',
-		'recurring_id' => 'int',
-		'recurring_cycle' => 'int',
-		'recurring_duration' => 'int',
-		'recurring_price' => 'float',
-		'trial' => 'bool',
-		'trial_cycle' => 'int',
-		'trial_duration' => 'int',
-		'trial_price' => 'float',
-		'status' => 'int'
-	];
+    protected $casts = [
+        'order_id'           => 'int',
+        'product_id'         => 'int',
+        'product_quantity'   => 'int',
+        'recurring_id'       => 'int',
+        'recurring_cycle'    => 'int',
+        'recurring_duration' => 'int',
+        'recurring_price'    => 'float',
+        'trial'              => 'bool',
+        'trial_cycle'        => 'int',
+        'trial_duration'     => 'int',
+        'trial_price'        => 'float',
+        'status'             => 'int',
+    ];
 
-	protected $dates = [
-		'date_added'
-	];
+    protected $dates = [
+        'date_added',
+    ];
 
-	protected $fillable = [
-		'order_id',
-		'reference',
-		'product_id',
-		'product_name',
-		'product_quantity',
-		'recurring_id',
-		'recurring_name',
-		'recurring_description',
-		'recurring_frequency',
-		'recurring_cycle',
-		'recurring_duration',
-		'recurring_price',
-		'trial',
-		'trial_frequency',
-		'trial_cycle',
-		'trial_duration',
-		'trial_price',
-		'status',
-		'date_added'
-	];
+    protected $fillable = [
+        'order_id',
+        'reference',
+        'product_id',
+        'product_name',
+        'product_quantity',
+        'recurring_id',
+        'recurring_name',
+        'recurring_description',
+        'recurring_frequency',
+        'recurring_cycle',
+        'recurring_duration',
+        'recurring_price',
+        'trial',
+        'trial_frequency',
+        'trial_cycle',
+        'trial_duration',
+        'trial_price',
+        'status',
+        'date_added',
+    ];
 }

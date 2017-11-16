@@ -10,8 +10,8 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcCustomer
- * 
+ * Class OcCustomer.
+ *
  * @property int $customer_id
  * @property int $customer_group_id
  * @property int $store_id
@@ -34,55 +34,53 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $token
  * @property string $code
  * @property \Carbon\Carbon $date_added
- *
- * @package App\Models
  */
 class OcCustomer extends Eloquent
 {
-	protected $table = 'oc_customer';
-	protected $primaryKey = 'customer_id';
-	public $timestamps = false;
+    protected $table = 'oc_customer';
+    protected $primaryKey = 'customer_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'customer_group_id' => 'int',
-		'store_id' => 'int',
-		'language_id' => 'int',
-		'newsletter' => 'bool',
-		'address_id' => 'int',
-		'status' => 'bool',
-		'safe' => 'bool'
-	];
+    protected $casts = [
+        'customer_group_id' => 'int',
+        'store_id'          => 'int',
+        'language_id'       => 'int',
+        'newsletter'        => 'bool',
+        'address_id'        => 'int',
+        'status'            => 'bool',
+        'safe'              => 'bool',
+    ];
 
-	protected $dates = [
-		'date_added'
-	];
+    protected $dates = [
+        'date_added',
+    ];
 
-	protected $hidden = [
-		'password',
-		'token'
-	];
+    protected $hidden = [
+        'password',
+        'token',
+    ];
 
-	protected $fillable = [
-		'customer_group_id',
-		'store_id',
-		'language_id',
-		'firstname',
-		'lastname',
-		'email',
-		'telephone',
-		'fax',
-		'password',
-		'salt',
-		'cart',
-		'wishlist',
-		'newsletter',
-		'address_id',
-		'custom_field',
-		'ip',
-		'status',
-		'safe',
-		'token',
-		'code',
-		'date_added'
-	];
+    protected $fillable = [
+        'customer_group_id',
+        'store_id',
+        'language_id',
+        'firstname',
+        'lastname',
+        'email',
+        'telephone',
+        'fax',
+        'password',
+        'salt',
+        'cart',
+        'wishlist',
+        'newsletter',
+        'address_id',
+        'custom_field',
+        'ip',
+        'status',
+        'safe',
+        'token',
+        'code',
+        'date_added',
+    ];
 }

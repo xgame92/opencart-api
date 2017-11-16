@@ -3,47 +3,44 @@
  * Created by PhpStorm.
  * User: yigit
  * Date: 25.08.2017
- * Time: 14:47
+ * Time: 14:47.
  */
 
 namespace App\Queries\V1;
 
 use App\Models\OcCountry;
 use Illuminate\Database\Eloquent\Builder;
-use App\Queries\V1\CountryCustomFilter;
 
 class OpencartQueryBuilder
 {
-
-    public static function Build(Builder $query,$model, $operatorArray){
-
-            if($model instanceof OcCountry){
-              /*  static::operationChecker($query,$operatorArarray[0],$model->country_id,'country_id');
-                static::operationChecker($query,$operatorArray[1],$model->name,'name');
-                static::operationChecker($query,$operatorArray[2],$model->iso_code_2,'iso_code_2');
-                static::operationChecker($query,$operatorArray[3],$model->iso_code_3,'iso_code_3');
-                static::operationChecker($query,$operatorArray[4],$model->address_format,'address_format');
-                static::operationChecker($query,$operatorArray[5],$model->postcode_required,'postcode_required');
-                static::operationChecker($query,$operatorArray[6],$model->status,'status');
-               */
-                $query =   CountryCustomFilter::Build($query,$model,$operatorArray);
-            }
-
-            return $query;
-
-    }
-
-  /*  public static function operationChecker(Builder $query,$sqlOperator,$input,$table){
-        if(!is_null($input)) {
-            if ($sqlOperator == '==') {
-                $query->where($table, $input);
-            } else if ($sqlOperator == 'like') {
-                $query->where($table,'like',$input.'%');
-            } else {
-                $query->where($table, $sqlOperator, $input);
-            }
+    public static function Build(Builder $query, $model, $operatorArray)
+    {
+        if ($model instanceof OcCountry) {
+            /*  static::operationChecker($query,$operatorArarray[0],$model->country_id,'country_id');
+              static::operationChecker($query,$operatorArray[1],$model->name,'name');
+              static::operationChecker($query,$operatorArray[2],$model->iso_code_2,'iso_code_2');
+              static::operationChecker($query,$operatorArray[3],$model->iso_code_3,'iso_code_3');
+              static::operationChecker($query,$operatorArray[4],$model->address_format,'address_format');
+              static::operationChecker($query,$operatorArray[5],$model->postcode_required,'postcode_required');
+              static::operationChecker($query,$operatorArray[6],$model->status,'status');
+             */
+            $query = CountryCustomFilter::Build($query, $model, $operatorArray);
         }
+
+        return $query;
     }
+
+    /*  public static function operationChecker(Builder $query,$sqlOperator,$input,$table){
+          if(!is_null($input)) {
+              if ($sqlOperator == '==') {
+                  $query->where($table, $input);
+              } else if ($sqlOperator == 'like') {
+                  $query->where($table,'like',$input.'%');
+              } else {
+                  $query->where($table, $sqlOperator, $input);
+              }
+          }
+      }
 */
   /*
     public static function TempCode(Builder $query, $model, $operatorArarray){

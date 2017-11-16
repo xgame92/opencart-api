@@ -10,21 +10,19 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcProductToDownload
- * 
+ * Class OcProductToDownload.
+ *
  * @property int $product_id
  * @property int $download_id
- *
- * @package App\Models
  */
 class OcProductToDownload extends Eloquent
 {
-	protected $table = 'oc_product_to_download';
-	public $incrementing = false;
-	public $timestamps = false;
+    protected $table = 'oc_product_to_download';
+    public $incrementing = false;
+    public $timestamps = false;
 
-	protected $casts = [
-		'product_id' => 'int',
-		'download_id' => 'int'
-	];
+    protected $casts = [
+        'product_id'  => 'int',
+        'download_id' => 'int',
+    ];
 }

@@ -10,8 +10,8 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcAddress
- * 
+ * Class OcAddress.
+ *
  * @property int $address_id
  * @property int $customer_id
  * @property string $firstname
@@ -24,32 +24,30 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $country_id
  * @property int $zone_id
  * @property string $custom_field
- *
- * @package App\Models
  */
 class OcAddress extends Eloquent
 {
-	protected $table = 'oc_address';
-	protected $primaryKey = 'address_id';
-	public $timestamps = false;
+    protected $table = 'oc_address';
+    protected $primaryKey = 'address_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'customer_id' => 'int',
-		'country_id' => 'int',
-		'zone_id' => 'int'
-	];
+    protected $casts = [
+        'customer_id' => 'int',
+        'country_id'  => 'int',
+        'zone_id'     => 'int',
+    ];
 
-	protected $fillable = [
-		'customer_id',
-		'firstname',
-		'lastname',
-		'company',
-		'address_1',
-		'address_2',
-		'city',
-		'postcode',
-		'country_id',
-		'zone_id',
-		'custom_field'
-	];
+    protected $fillable = [
+        'customer_id',
+        'firstname',
+        'lastname',
+        'company',
+        'address_1',
+        'address_2',
+        'city',
+        'postcode',
+        'country_id',
+        'zone_id',
+        'custom_field',
+    ];
 }

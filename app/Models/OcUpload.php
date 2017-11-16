@@ -10,30 +10,28 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcUpload
- * 
+ * Class OcUpload.
+ *
  * @property int $upload_id
  * @property string $name
  * @property string $filename
  * @property string $code
  * @property \Carbon\Carbon $date_added
- *
- * @package App\Models
  */
 class OcUpload extends Eloquent
 {
-	protected $table = 'oc_upload';
-	protected $primaryKey = 'upload_id';
-	public $timestamps = false;
+    protected $table = 'oc_upload';
+    protected $primaryKey = 'upload_id';
+    public $timestamps = false;
 
-	protected $dates = [
-		'date_added'
-	];
+    protected $dates = [
+        'date_added',
+    ];
 
-	protected $fillable = [
-		'name',
-		'filename',
-		'code',
-		'date_added'
-	];
+    protected $fillable = [
+        'name',
+        'filename',
+        'code',
+        'date_added',
+    ];
 }

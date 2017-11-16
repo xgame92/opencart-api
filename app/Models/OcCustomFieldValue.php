@@ -10,27 +10,25 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcCustomFieldValue
- * 
+ * Class OcCustomFieldValue.
+ *
  * @property int $custom_field_value_id
  * @property int $custom_field_id
  * @property int $sort_order
- *
- * @package App\Models
  */
 class OcCustomFieldValue extends Eloquent
 {
-	protected $table = 'oc_custom_field_value';
-	protected $primaryKey = 'custom_field_value_id';
-	public $timestamps = false;
+    protected $table = 'oc_custom_field_value';
+    protected $primaryKey = 'custom_field_value_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'custom_field_id' => 'int',
-		'sort_order' => 'int'
-	];
+    protected $casts = [
+        'custom_field_id' => 'int',
+        'sort_order'      => 'int',
+    ];
 
-	protected $fillable = [
-		'custom_field_id',
-		'sort_order'
-	];
+    protected $fillable = [
+        'custom_field_id',
+        'sort_order',
+    ];
 }

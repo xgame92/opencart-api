@@ -3,8 +3,9 @@
  * Created by PhpStorm.
  * User: yigit
  * Date: 26.08.2017
- * Time: 01:22
+ * Time: 01:22.
  */
+
 namespace Infrastructure\Exceptions;
 
 use Exception;

@@ -10,8 +10,8 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcProduct
- * 
+ * Class OcProduct.
+ *
  * @property int $product_id
  * @property string $model
  * @property string $sku
@@ -43,72 +43,70 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $viewed
  * @property \Carbon\Carbon $date_added
  * @property \Carbon\Carbon $date_modified
- *
- * @package App\Models
  */
 class OcProduct extends Eloquent
 {
-	protected $table = 'oc_product';
-	protected $primaryKey = 'product_id';
-	public $timestamps = false;
+    protected $table = 'oc_product';
+    protected $primaryKey = 'product_id';
+    public $timestamps = false;
 
-	protected $casts = [
-		'quantity' => 'int',
-		'stock_status_id' => 'int',
-		'manufacturer_id' => 'int',
-		'shipping' => 'bool',
-		'price' => 'float',
-		'points' => 'int',
-		'tax_class_id' => 'int',
-		'weight' => 'float',
-		'weight_class_id' => 'int',
-		'length' => 'float',
-		'width' => 'float',
-		'height' => 'float',
-		'length_class_id' => 'int',
-		'subtract' => 'bool',
-		'minimum' => 'int',
-		'sort_order' => 'int',
-		'status' => 'bool',
-		'viewed' => 'int'
-	];
+    protected $casts = [
+        'quantity'        => 'int',
+        'stock_status_id' => 'int',
+        'manufacturer_id' => 'int',
+        'shipping'        => 'bool',
+        'price'           => 'float',
+        'points'          => 'int',
+        'tax_class_id'    => 'int',
+        'weight'          => 'float',
+        'weight_class_id' => 'int',
+        'length'          => 'float',
+        'width'           => 'float',
+        'height'          => 'float',
+        'length_class_id' => 'int',
+        'subtract'        => 'bool',
+        'minimum'         => 'int',
+        'sort_order'      => 'int',
+        'status'          => 'bool',
+        'viewed'          => 'int',
+    ];
 
-	protected $dates = [
-		'date_available',
-		'date_added',
-		'date_modified'
-	];
+    protected $dates = [
+        'date_available',
+        'date_added',
+        'date_modified',
+    ];
 
-	protected $fillable = [
-		'model',
-		'sku',
-		'upc',
-		'ean',
-		'jan',
-		'isbn',
-		'mpn',
-		'location',
-		'quantity',
-		'stock_status_id',
-		'image',
-		'manufacturer_id',
-		'shipping',
-		'price',
-		'points',
-		'tax_class_id',
-		'date_available',
-		'weight',
-		'weight_class_id',
-		'length',
-		'width',
-		'height',
-		'length_class_id',
-		'subtract',
-		'minimum',
-		'sort_order',
-		'status',
-		'viewed',
-		'date_added',
-		'date_modified'
-	];
+    protected $fillable = [
+        'model',
+        'sku',
+        'upc',
+        'ean',
+        'jan',
+        'isbn',
+        'mpn',
+        'location',
+        'quantity',
+        'stock_status_id',
+        'image',
+        'manufacturer_id',
+        'shipping',
+        'price',
+        'points',
+        'tax_class_id',
+        'date_available',
+        'weight',
+        'weight_class_id',
+        'length',
+        'width',
+        'height',
+        'length_class_id',
+        'subtract',
+        'minimum',
+        'sort_order',
+        'status',
+        'viewed',
+        'date_added',
+        'date_modified',
+    ];
 }

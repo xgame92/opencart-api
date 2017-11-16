@@ -10,20 +10,18 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcVoucherTheme
- * 
+ * Class OcVoucherTheme.
+ *
  * @property int $voucher_theme_id
  * @property string $image
- *
- * @package App\Models
  */
 class OcVoucherTheme extends Eloquent
 {
-	protected $table = 'oc_voucher_theme';
-	protected $primaryKey = 'voucher_theme_id';
-	public $timestamps = false;
+    protected $table = 'oc_voucher_theme';
+    protected $primaryKey = 'voucher_theme_id';
+    public $timestamps = false;
 
-	protected $fillable = [
-		'image'
-	];
+    protected $fillable = [
+        'image',
+    ];
 }

@@ -10,21 +10,19 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class OcProductRelated
- * 
+ * Class OcProductRelated.
+ *
  * @property int $product_id
  * @property int $related_id
- *
- * @package App\Models
  */
 class OcProductRelated extends Eloquent
 {
-	protected $table = 'oc_product_related';
-	public $incrementing = false;
-	public $timestamps = false;
+    protected $table = 'oc_product_related';
+    public $incrementing = false;
+    public $timestamps = false;
 
-	protected $casts = [
-		'product_id' => 'int',
-		'related_id' => 'int'
-	];
+    protected $casts = [
+        'product_id' => 'int',
+        'related_id' => 'int',
+    ];
 }
